@@ -21,20 +21,21 @@ gem "lita-zerocater"
 
 Configuring at least one location is required:
 
-``ruby
+``` ruby
 config.handlers.zerocater.locations = {
   'San Francisco' => 'ABCD'
 }
-``
+```
+
 Where `ABCD` is the slug found at the end of the Zerocater menu URL
 
 ## Usage
 
 Examples:
 
-``
+```
 lunch               - Show today's Zerocater menu for all locations
 zerocater today     - Show today's Zerocater menu for all locations
 zerocater tomorrow  - Show tomorrow's Zerocater menu for all locations
 zerocater yesterday - Show yesterday's Zerocater menu for all locations
-``
+```

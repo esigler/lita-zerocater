@@ -11,7 +11,7 @@ describe Lita::Handlers::Zerocater, lita_handler: true do
   it { is_expected.to route_command('lunch').to(:today) }
 
   let(:menu) do
-    File.read(ENV['ZK_MENU'])
+    File.read('spec/files/menu.html')
   end
 
   describe '#today' do

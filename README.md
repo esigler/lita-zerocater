@@ -39,4 +39,3 @@ zerocater today     - Show today's Zerocater menu for all locations
 zerocater tomorrow  - Show tomorrow's Zerocater menu for all locations
 zerocater yesterday - Show yesterday's Zerocater menu for all locations
 ```
-

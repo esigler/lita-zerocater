@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = 'lita-zerocater'
-  spec.version       = '0.7.0'
+  spec.version       = '0.8.0'
   spec.authors       = ['Eric Sigler']
   spec.email         = ['me@esigler.com']
   spec.description   = 'A ZeroCater menu lookup plugin for Lita'
@@ -16,6 +16,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency 'lita', '>= 4.4'
   spec.add_runtime_dependency 'nokogiri'
+  spec.add_runtime_dependency 'unidecoder'
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'coveralls'

@@ -70,13 +70,18 @@ module Lita
         menu = page.css("div.menu[data-date='" + search_date + "']")
         menu.css('.meal-label').each do |meal|
           meal.css('.order-name').each do |order|
-            results.push order.text.strip
+            results.push order.text.strip.to_ascii
           end
         end
         results
       end
 
+      # rubocop:disable Metrics/AbcSize
+      # rubocop:disable Metrics/MethodLength
       def menu(location, search_date)
+        cache_key = "#{location}_#{search_date}"
+        return redis.get(cache_key) if redis.exists(cache_key)
+
         begin
           menu = extract(fetch(config.locations[location]), search_date)
         rescue
@@ -85,10 +90,14 @@ module Lita
 
         return t('error.empty') unless menu.size > 0
 
-        render_template('menu',
-                        menu: menu,
-                        locale: t('menu.locale', location: location))
+        t = render_template('menu',
+                            menu: menu,
+                            locale: t('menu.locale', location: location))
+        redis.set(cache_key, t)
+        t
       end
+      # rubocop:enable Metrics/AbcSize
+      # rubocop:enable Metrics/MethodLength
 
       def menu_today(location)
         menu(location, (Date.today).to_s)

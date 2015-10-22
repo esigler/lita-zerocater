@@ -5,6 +5,7 @@ Lita.load_locales Dir[File.expand_path(
 )]
 
 require 'nokogiri'
+require 'unidecoder'
 
 require 'lita/handlers/zerocater'
 

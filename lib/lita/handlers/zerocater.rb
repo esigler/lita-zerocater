@@ -31,7 +31,7 @@ module Lita
       )
 
       route(
-        /^lunch$/,
+        /^lunch$/i,
         :today,
         command: true,
         help: {

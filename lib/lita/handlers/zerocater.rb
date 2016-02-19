@@ -31,7 +31,7 @@ module Lita
       )
 
       route(
-        /^lunch$/,
+        /^lunch$/i,
         :today,
         command: true,
         help: {
@@ -60,18 +60,15 @@ module Lita
       private
 
       def fetch(location)
-        http.get('https://zerocater.com/m/' + location)
+        http.get("https://api.zerocater.com/v3/companies/#{location}/meals")
       end
 
       def extract(menu_text, search_date)
-        # NOTE: This is horrible.  No, really.  Curse you Zerocater.
         results = []
-        page = Nokogiri::HTML(menu_text.body)
-        menu = page.css("div.menu[data-date='" + search_date + "']")
-        menu.css('.meal-label').each do |meal|
-          meal.css('.order-name').each do |order|
-            results.push order.text.strip.to_ascii
-          end
+        content = JSON.parse(menu_text.body)
+        content.each do |item|
+          date = DateTime.strptime(item['time'].to_s, '%s').strftime('%Y-%m-%d')
+          results << item['name'] if date == search_date
         end
         results
       end
@@ -82,25 +79,23 @@ module Lita
         cache_key = "#{location}_#{search_date}"
         return redis.get(cache_key) if redis.exists(cache_key)
 
-        begin
-          menu = extract(fetch(config.locations[location]), search_date)
-        rescue
-          return t('error.retrieve')
-        end
-
-        return t('error.empty') unless menu.size > 0
+        menu = extract(fetch(config.locations[location]), search_date)
+        return t('error.empty') if menu.empty?
 
         t = render_template('menu',
                             menu: menu,
                             locale: t('menu.locale', location: location))
+
         redis.set(cache_key, t)
         t
+      rescue
+        t('error.retrieve')
       end
       # rubocop:enable Metrics/AbcSize
       # rubocop:enable Metrics/MethodLength
 
       def menu_today(location)
-        menu(location, (Date.today).to_s)
+        menu(location, Date.today.to_s)
       end
 
       def menu_yesterday(location)

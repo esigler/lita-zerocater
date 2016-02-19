@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = 'lita-zerocater'
-  spec.version       = '0.8.0'
+  spec.version       = '0.9.0'
   spec.authors       = ['Eric Sigler']
   spec.email         = ['me@esigler.com']
   spec.description   = 'A ZeroCater menu lookup plugin for Lita'

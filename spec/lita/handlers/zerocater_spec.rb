@@ -8,8 +8,11 @@ describe Lita::Handlers::Zerocater, lita_handler: true do
   it { is_expected.to route_command('zerocater today').to(:today) }
   it { is_expected.to route_command('zerocater tomorrow').to(:tomorrow) }
   it { is_expected.to route_command('zerocater yesterday').to(:yesterday) }
+  it { is_expected.to route_command('breakfast').to(:today) }
+  it { is_expected.to route_command('brunch').to(:today) }
   it { is_expected.to route_command('lunch').to(:today) }
   it { is_expected.to route_command('Lunch').to(:today) }
+  it { is_expected.to route_command('dinner').to(:today) }
 
   let(:menu) do
     File.read('spec/files/meals.json')

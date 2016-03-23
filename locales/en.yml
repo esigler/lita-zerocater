@@ -4,7 +4,7 @@ en:
       zerocater:
         help:
           lunch:
-            syntax: lunch
+            syntax: (breakfast|brunch|lunch|dinner)
             desc: Show today's Zerocater menu for all locations
           today:
             syntax: zerocater today

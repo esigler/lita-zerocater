@@ -2,6 +2,224 @@
 http_interactions:
 - request:
     method: get
+    uri: https://api.zerocater.com/v3/meals/567315
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Lita v4.7.0
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      connection:
+      - close
+      server:
+      - gunicorn/19.3.0
+      date:
+      - Sun, 10 Apr 2016 18:17:45 GMT
+      transfer-encoding:
+      - chunked
+      x-xss-protection:
+      - 1; mode=block
+      strict-transport-security:
+      - max-age=31536000
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      content-type:
+      - application/json
+      allow:
+      - GET, HEAD, OPTIONS
+      via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":567315,"url":"https://api.zerocater.com/v3/meals/567315","name":"Korean-Thai
+        Fusion","vendor_name":"Crazy Mint","vendor_image_url":"https://res.cloudinary.com/zerocater/image/upload/v1439520218/zwwuhn2o4gd6ilvsng7f.jpg","vendor_description":"Crazy
+        Mint is the Asian Fusion division of Namie''s Kitchen. ","time":1459882200,"location_hash":"ea9b7d","is_mindful":false,"was_delivered":true,"is_sample":false,"ratings_url":"https://api.zerocater.com/v3/meals/567315/ratings","items":[{"name":"Sweet
+        Garlic Ginger Grilled Chicken","description":"Grilled boneless/skinless chicken
+        marinated in soy, ginger, sesame and garlic","instructions":"Modification:
+        Use Gluten-Free Soy\nMAKE GLUTEN-FREE","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":true},"soy":{"value":true},"vegetarian":{"value":false},"egg":{"value":false},"shellfish":{"value":false},"vegan":{"value":false},"nuts":{"value":false}},"images":[]},{"name":"Spicy
+        Korean BBQ Chicken","description":"Chicken thigh baked with gojujong spicy
+        bbq sauce.","instructions":"","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":true},"soy":{"value":true},"vegetarian":{"value":false},"egg":{"value":false},"shellfish":{"value":false},"vegan":{"value":false},"nuts":{"value":false}},"images":[]},{"name":"Tofu
+        Green Curry","description":"","instructions":"","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":true},"vegetarian":{"value":true},"egg":{"value":false},"shellfish":{"value":false},"vegan":{"value":true},"nuts":{"value":false}},"images":[]},{"name":"Coconut
+        Rice","description":"Steamed Jasmine rice with coconut milk and toasted coconut","instructions":"","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"vegetarian":{"value":true},"egg":{"value":false},"shellfish":{"value":false},"vegan":{"value":true},"nuts":{"value":false}},"images":[]},{"name":"Soba
+        Noodle Salad","description":"Buckwheat noodles tossed with noodles of zucchini,
+        cabbage and red bell pepper in a wasabi soy vinaigrette","instructions":"","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":true},"soy":{"value":true},"vegetarian":{"value":true},"egg":{"value":false},"shellfish":{"value":false},"vegan":{"value":true},"nuts":{"value":false}},"images":[]},{"name":"Sake
+        and Miso Glazed Japanese Eggplants","description":"Halved Japanese eggplants
+        with crispy baked sake and miso glaze","instructions":"","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"vegetarian":{"value":true},"egg":{"value":false},"shellfish":{"value":false},"vegan":{"value":true},"nuts":{"value":false}},"images":[]},{"name":"Vegetable
+        and Bean Cake","description":"Baked vegetable patties of zucchini, carrots,
+        kale and beans, and served with warm tomato basil marinara","instructions":"Modification:
+        Make Nut-Free, Soy-Free, Lemon-Free, Caraway Seed-Free, Barley-Free, Radish-Free\nLabel:
+        CHRIS","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"vegetarian":{"value":true},"egg":{"value":false},"shellfish":{"value":false},"vegan":{"value":true},"nuts":{"value":false}},"images":[]}],"ratings":[]}'
+    http_version: 
+  recorded_at: Tue, 05 Apr 2016 15:00:01 GMT
+- request:
+    method: get
+    uri: https://api.zerocater.com/v3/meals/556119
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Lita v4.7.0
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      connection:
+      - close
+      server:
+      - gunicorn/19.3.0
+      date:
+      - Sun, 10 Apr 2016 18:17:46 GMT
+      transfer-encoding:
+      - chunked
+      x-xss-protection:
+      - 1; mode=block
+      strict-transport-security:
+      - max-age=31536000
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      content-type:
+      - application/json
+      allow:
+      - GET, HEAD, OPTIONS
+      via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":556119,"url":"https://api.zerocater.com/v3/meals/556119","name":"Seasonal
+        Salad Bar: Springtime","vendor_name":"Seasonal Salad Bar By 2Forks","vendor_image_url":"https://res.cloudinary.com/zerocater/image/upload/v1456775116/ku64f9okechlqxwdwfev.jpg","vendor_description":"Fresh
+        and seasonal salad bar provided by 2Forks.","time":1459882200,"location_hash":"ea9b7d","is_mindful":false,"was_delivered":true,"is_sample":false,"ratings_url":"https://api.zerocater.com/v3/meals/556119/ratings","items":[{"name":"Springtime
+        Salad Bar","description":"","instructions":"","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"vegetarian":{"value":true},"egg":{"value":false},"shellfish":{"value":false},"vegan":{"value":true},"nuts":{"value":false}},"images":[]},{"name":"Grilled
+        Chicken Breast","description":"","instructions":"","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"vegetarian":{"value":false},"egg":{"value":false},"shellfish":{"value":false},"vegan":{"value":false},"nuts":{"value":false}},"images":[]},{"name":"Grilled
+        Tofu","description":"","instructions":"","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":true},"vegetarian":{"value":true},"egg":{"value":false},"shellfish":{"value":false},"vegan":{"value":true},"nuts":{"value":false}},"images":[]},{"name":"Avocado","description":"","instructions":"","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"vegetarian":{"value":true},"egg":{"value":false},"shellfish":{"value":false},"vegan":{"value":true},"nuts":{"value":false}},"images":[]},{"name":"Citrus
+        Vinaigrette","description":"House made by 2Forks","instructions":"","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"vegetarian":{"value":true},"egg":{"value":false},"shellfish":{"value":false},"vegan":{"value":true},"nuts":{"value":false}},"images":[]},{"name":"Balsamic
+        Vinaigrette","description":"House made by 2Forks","instructions":"","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"vegetarian":{"value":true},"egg":{"value":false},"shellfish":{"value":false},"vegan":{"value":true},"nuts":{"value":false}},"images":[]},{"name":"Citrus
+        Avocado Dressing","description":"Housemade by 2Forks","instructions":"","labels":{"no
+        dietary information":{"value":true}},"images":[]},{"name":"Almond Slivers","description":"","instructions":"","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"vegetarian":{"value":true},"egg":{"value":false},"shellfish":{"value":false},"vegan":{"value":true},"nuts":{"value":true}},"images":[]},{"name":"Romano
+        Cheese","description":"","instructions":"","labels":{"pork":{"value":false},"dairy":{"value":true},"gluten":{"value":false},"soy":{"value":false},"vegetarian":{"value":true},"egg":{"value":false},"shellfish":{"value":false},"vegan":{"value":false},"nuts":{"value":false}},"images":[]}],"ratings":[]}'
+    http_version: 
+  recorded_at: Tue, 05 Apr 2016 15:00:02 GMT
+- request:
+    method: get
+    uri: https://api.zerocater.com/v3/meals/556118
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Lita v4.7.0
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      connection:
+      - close
+      server:
+      - gunicorn/19.3.0
+      date:
+      - Sun, 10 Apr 2016 18:17:48 GMT
+      transfer-encoding:
+      - chunked
+      strict-transport-security:
+      - max-age=31536000
+      x-frame-options:
+      - SAMEORIGIN
+      x-content-type-options:
+      - nosniff
+      allow:
+      - GET, HEAD, OPTIONS
+      x-xss-protection:
+      - 1; mode=block
+      content-type:
+      - application/json
+      via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":556118,"url":"https://api.zerocater.com/v3/meals/556118","name":"Seasonal
+        Salad Bar: Springtime","vendor_name":"Seasonal Salad Bar By 2Forks","vendor_image_url":"https://res.cloudinary.com/zerocater/image/upload/v1456775116/ku64f9okechlqxwdwfev.jpg","vendor_description":"Fresh
+        and seasonal salad bar provided by 2Forks.","time":1459795800,"location_hash":"ea9b7d","is_mindful":false,"was_delivered":true,"is_sample":false,"ratings_url":"https://api.zerocater.com/v3/meals/556118/ratings","items":[{"name":"Springtime
+        Salad Bar","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":true},"pork":{"value":false},"vegan":{"value":true},"nuts":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"egg":{"value":false}},"images":[]},{"name":"Grilled
+        Chicken Breast","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":false},"pork":{"value":false},"vegan":{"value":false},"nuts":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"egg":{"value":false}},"images":[]},{"name":"Grilled
+        Tofu","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":true},"pork":{"value":false},"vegan":{"value":true},"nuts":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":true},"egg":{"value":false}},"images":[]},{"name":"Avocado","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":true},"pork":{"value":false},"vegan":{"value":true},"nuts":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"egg":{"value":false}},"images":[]},{"name":"Citrus
+        Vinaigrette","description":"House made by 2Forks","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":true},"pork":{"value":false},"vegan":{"value":true},"nuts":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"egg":{"value":false}},"images":[]},{"name":"Balsamic
+        Vinaigrette","description":"House made by 2Forks","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":true},"pork":{"value":false},"vegan":{"value":true},"nuts":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"egg":{"value":false}},"images":[]},{"name":"Romano
+        Cheese","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":true},"pork":{"value":false},"vegan":{"value":false},"nuts":{"value":false},"dairy":{"value":true},"gluten":{"value":false},"soy":{"value":false},"egg":{"value":false}},"images":[]},{"name":"Almond
+        Slivers","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":true},"pork":{"value":false},"vegan":{"value":true},"nuts":{"value":true},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"egg":{"value":false}},"images":[]},{"name":"Citrus
+        Avocado Dressing","description":"Housemade by 2Forks","instructions":"","labels":{"no
+        dietary information":{"value":true}},"images":[]},{"name":"Dried Cherries","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":true},"pork":{"value":false},"vegan":{"value":true},"nuts":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"egg":{"value":false}},"images":[]}],"ratings":[]}'
+    http_version: 
+  recorded_at: Tue, 05 Apr 2016 15:00:01 GMT
+- request:
+    method: get
+    uri: https://api.zerocater.com/v3/meals/567314
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Lita v4.7.0
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      connection:
+      - close
+      server:
+      - gunicorn/19.3.0
+      date:
+      - Sun, 10 Apr 2016 18:17:49 GMT
+      transfer-encoding:
+      - chunked
+      x-xss-protection:
+      - 1; mode=block
+      strict-transport-security:
+      - max-age=31536000
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      content-type:
+      - application/json
+      allow:
+      - GET, HEAD, OPTIONS
+      via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":567314,"url":"https://api.zerocater.com/v3/meals/567314","name":"Chicken
+        & Meatballs","vendor_name":"Cafe Sud","vendor_image_url":"https://res.cloudinary.com/zerocater/image/upload/v1439520129/ukpqcczmpmyi8vain8ro.jpg","vendor_description":"With
+        a background in catering to paleo clientele, Chef Katia Sabbah brings healthy,
+        clean food to companies throughout the Bay Area.","time":1459795800,"location_hash":"ea9b7d","is_mindful":false,"was_delivered":true,"is_sample":false,"ratings_url":"https://api.zerocater.com/v3/meals/567314/ratings","items":[{"name":"Turkey
+        Meatballs with Fresh Tomato Sauce","description":"Ground turkey, egg, panko
+        breadcrumbs, and light spices.","instructions":"","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":true},"soy":{"value":false},"vegetarian":{"value":false},"egg":{"value":true},"shellfish":{"value":false},"vegan":{"value":false},"nuts":{"value":false}},"images":[{"is_default":true,"image_url":"http://res.cloudinary.com/zerocater/image/upload/v1439532677/apttwnutrpz8ahpf4qzt.jpg"}]},{"name":"Sundried
+        Tomato Grilled Chicken","description":"Marinated grilled chicken in lemon
+        juice and sundried tomatoes, and served with nut-free pesto aioli.","instructions":"","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"vegetarian":{"value":false},"egg":{"value":false},"shellfish":{"value":false},"vegan":{"value":false},"nuts":{"value":false}},"images":[{"is_default":true,"image_url":"http://res.cloudinary.com/zerocater/image/upload/v1439521239/abv3ecayqjxtsgzfds9g.jpg"}]},{"name":"Pesto
+        Aioli","description":"To be served with the Sundried Tomato Chicken (nut-free).","instructions":"","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"vegetarian":{"value":true},"egg":{"value":true},"shellfish":{"value":false},"vegan":{"value":false},"nuts":{"value":false}},"images":[]},{"name":"French
+        Organic Lentils","description":"Stew of French organic lentils, onion, thyme,
+        white wine, celery, carrots, and parsley.","instructions":"","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"vegetarian":{"value":true},"egg":{"value":false},"shellfish":{"value":false},"vegan":{"value":true},"nuts":{"value":false}},"images":[]},{"name":"Garlic
+        and Rosemary Roasted Potatoes","description":"Roasted potatoes seasoned with
+        rosemary and garlic.","instructions":"","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"vegetarian":{"value":true},"egg":{"value":false},"shellfish":{"value":false},"vegan":{"value":true},"nuts":{"value":false}},"images":[{"is_default":true,"image_url":"http://res.cloudinary.com/zerocater/image/upload/v1439532716/iqduab80cy3mglw8vs5r.jpg"}]},{"name":"Grilled
+        Vegetables","description":"Seasonal grilled vegetables.","instructions":"","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"vegetarian":{"value":true},"egg":{"value":false},"shellfish":{"value":false},"vegan":{"value":true},"nuts":{"value":false}},"images":[{"is_default":true,"image_url":"http://res.cloudinary.com/zerocater/image/upload/v1439532707/gbf4umhkzqnepw2mrl0h.jpg"}]},{"name":"French
+        Organic Lentils","description":"Stew of French organic lentils, onion, thyme,
+        white wine, celery, carrots, and parsley.","instructions":"Modification: Package
+        separately\nLabel: Sophie","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"vegetarian":{"value":true},"egg":{"value":false},"shellfish":{"value":false},"vegan":{"value":true},"nuts":{"value":false}},"images":[]}],"ratings":[]}'
+    http_version: 
+  recorded_at: Tue, 05 Apr 2016 15:00:01 GMT
+- request:
+    method: get
     uri: https://api.zerocater.com/v3/companies/YVKV/meals
     body:
       encoding: US-ASCII
@@ -19,7 +237,7 @@ http_interactions:
       server:
       - gunicorn/19.3.0
       date:
-      - Sun, 10 Apr 2016 17:54:33 GMT
+      - Sun, 10 Apr 2016 18:17:49 GMT
       transfer-encoding:
       - chunked
       x-xss-protection:
@@ -500,5 +718,167 @@ http_interactions:
         ImlzX3NhbXBsZSI6ZmFsc2UsInJhdGluZ3NfdXJsIjoiaHR0cHM6Ly9hcGku
         emVyb2NhdGVyLmNvbS92My9tZWFscy81NjczMjcvcmF0aW5ncyJ9XQ==
     http_version: 
-  recorded_at: Fri, 01 Jan 2016 16:00:01 GMT
+  recorded_at: Tue, 05 Apr 2016 15:00:00 GMT
+- request:
+    method: get
+    uri: https://api.zerocater.com/v3/meals/556108
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Lita v4.7.0
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      connection:
+      - close
+      server:
+      - gunicorn/19.3.0
+      date:
+      - Sun, 10 Apr 2016 18:17:50 GMT
+      transfer-encoding:
+      - chunked
+      x-xss-protection:
+      - 1; mode=block
+      strict-transport-security:
+      - max-age=31536000
+      x-content-type-options:
+      - nosniff
+      x-frame-options:
+      - SAMEORIGIN
+      content-type:
+      - application/json
+      allow:
+      - GET, HEAD, OPTIONS
+      via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":556108,"url":"https://api.zerocater.com/v3/meals/556108","name":"French
+        Breakfast Crepes!","vendor_name":"Crepe Madame","vendor_image_url":"https://res.cloudinary.com/zerocater/image/upload/v1439520227/dzrbr3ndpau4icvoygh4.jpg","vendor_description":"Laetitia''s
+        traditional French buckwheat and sweet crepes are prepared and served on-site,
+        with love. ","time":1459956600,"location_hash":"ea9b7d","is_mindful":false,"was_delivered":true,"is_sample":false,"ratings_url":"https://api.zerocater.com/v3/meals/556108/ratings","items":[{"name":"Savory
+        Buckwheat Crepes","description":"Includes a variety of meats, cheeses, vegetables,
+        herbs, and sauces","instructions":"","labels":{"pork":{"value":false},"dairy":{"value":true},"gluten":{"value":false},"soy":{"value":false},"vegetarian":{"value":true},"egg":{"value":true},"shellfish":{"value":false},"vegan":{"value":false},"nuts":{"value":false}},"images":[{"is_default":true,"image_url":"http://res.cloudinary.com/zerocater/image/upload/v1439530196/cwwqsti2nogvwhumswbu.jpg"}]},{"name":"Sweet
+        Crepes","description":"Includes a variety of sweet options such as brown sugar,
+        lemon, nutella, banana, and caramel","instructions":"MODIFICATION: MAKE ALL
+        NUT-FREE","labels":{"pork":{"value":false},"dairy":{"value":true},"gluten":{"value":true},"soy":{"value":false},"vegetarian":{"value":true},"egg":{"value":true},"shellfish":{"value":false},"vegan":{"value":false},"nuts":{"value":true}},"images":[{"is_default":true,"image_url":"http://res.cloudinary.com/zerocater/image/upload/v1439530190/zsmrzfnqgycr4yramsvr.jpg"}]},{"name":"Organic
+        Egg","description":"","instructions":"","labels":{"pork":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"vegetarian":{"value":true},"egg":{"value":true},"shellfish":{"value":false},"vegan":{"value":false},"nuts":{"value":false}},"images":[]}],"ratings":[]}'
+    http_version: 
+  recorded_at: Tue, 05 Apr 2016 15:00:01 GMT
+- request:
+    method: get
+    uri: https://api.zerocater.com/v3/meals/580764
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Lita v4.7.0
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      connection:
+      - close
+      server:
+      - gunicorn/19.3.0
+      date:
+      - Sun, 10 Apr 2016 18:17:51 GMT
+      transfer-encoding:
+      - chunked
+      strict-transport-security:
+      - max-age=31536000
+      x-frame-options:
+      - SAMEORIGIN
+      x-content-type-options:
+      - nosniff
+      allow:
+      - GET, HEAD, OPTIONS
+      x-xss-protection:
+      - 1; mode=block
+      content-type:
+      - application/json
+      via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":580764,"url":"https://api.zerocater.com/v3/meals/580764","name":"Sandwiches!","vendor_name":"Green
+        Bar","vendor_image_url":"https://res.cloudinary.com/zerocater/image/upload/v1439520419/ljyyhxtgg54ime8aocol.jpg","vendor_description":"Quick,
+        fresh and healthy, this FiDi lunch destination is now available for catering!
+        ","time":1459968600,"location_hash":"ea9b7d","is_mindful":false,"was_delivered":true,"is_sample":false,"ratings_url":"https://api.zerocater.com/v3/meals/580764/ratings","items":[{"name":"BBQ
+        Chicken with Smoked Gouda Sandwich","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":false},"pork":{"value":false},"vegan":{"value":false},"nuts":{"value":false},"dairy":{"value":true},"gluten":{"value":true},"soy":{"value":false},"egg":{"value":false}},"images":[{"image_url":"http://res.cloudinary.com/zerocater/image/upload/v1439527292/rznkru7qvpsbsvvr2knf.jpg","is_default":true}]},{"name":"Gluten-Free
+        BBQ Chicken with Smoked Gouda Sandwich","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":false},"pork":{"value":false},"vegan":{"value":false},"nuts":{"value":false},"dairy":{"value":true},"gluten":{"value":false},"soy":{"value":false},"egg":{"value":false}},"images":[]},{"name":"Beef
+        Tri-Tip Sandwich","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":false},"pork":{"value":false},"vegan":{"value":false},"nuts":{"value":false},"dairy":{"value":true},"gluten":{"value":true},"soy":{"value":false},"egg":{"value":true}},"images":[{"image_url":"http://res.cloudinary.com/zerocater/image/upload/v1439527289/rfjsgovxom0mwe5ys5kz.jpg","is_default":true}]},{"name":"Ham
+        and Brie Sandwich","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":false},"pork":{"value":true},"vegan":{"value":false},"nuts":{"value":false},"dairy":{"value":true},"gluten":{"value":true},"soy":{"value":false},"egg":{"value":false}},"images":[]},{"name":"Roast
+        Turkey Sandwich with Cranberry Sauce","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":false},"pork":{"value":false},"vegan":{"value":false},"nuts":{"value":false},"dairy":{"value":false},"gluten":{"value":true},"soy":{"value":false},"egg":{"value":true}},"images":[{"image_url":"http://res.cloudinary.com/zerocater/image/upload/v1439527299/bywmdxgpmvjsjkw6tcue.jpg","is_default":true}]},{"name":"Gluten-Free
+        Roast Turkey Sandwich with Cranberry Sauce","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":false},"pork":{"value":false},"vegan":{"value":false},"nuts":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"egg":{"value":true}},"images":[]},{"name":"Gluten-Free
+        Grilled Chicken Sandwich","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":false},"pork":{"value":false},"vegan":{"value":false},"nuts":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"egg":{"value":true}},"images":[]},{"name":"Grilled
+        Chicken Sandwich","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":false},"pork":{"value":false},"vegan":{"value":false},"nuts":{"value":false},"dairy":{"value":false},"gluten":{"value":true},"soy":{"value":false},"egg":{"value":true}},"images":[{"image_url":"http://res.cloudinary.com/zerocater/image/upload/v1439527262/htswljmoyr8oi44mxbyw.jpg","is_default":true}]},{"name":"Hummus,
+        Cucumber, Avocado, and Tomato on Focaccia","description":"","instructions":"VEGAN
+        OPTION","labels":{"shellfish":{"value":false},"vegetarian":{"value":true},"pork":{"value":false},"vegan":{"value":true},"nuts":{"value":false},"dairy":{"value":false},"gluten":{"value":true},"soy":{"value":false},"egg":{"value":false}},"images":[]},{"name":"Grilled
+        Portobello Mushroom with Provolone Sandwich","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":true},"pork":{"value":false},"vegan":{"value":false},"nuts":{"value":false},"dairy":{"value":true},"gluten":{"value":true},"soy":{"value":false},"egg":{"value":false}},"images":[]},{"name":"Creamy
+        Brie with Sun Dried Tomato Pesto, Sprouts, and Sliced Apple","description":"","instructions":"VEGETARIAN
+        OPTION\nCONTAINS NUTS","labels":{"shellfish":{"value":false},"vegetarian":{"value":true},"pork":{"value":false},"vegan":{"value":false},"nuts":{"value":true},"dairy":{"value":true},"gluten":{"value":true},"soy":{"value":false},"egg":{"value":false}},"images":[]},{"name":"Grilled
+        Portobello Mushroom with Provolone Sandwich","description":"","instructions":"Modification:
+        Make \"Soy-Free\", \"Nut-Free\", \"Lemon-Free\", \"Caraway Seed-Free\", \"Barley-Free\",
+        \"Radish-Free\"\nLabel: CHRIS","labels":{"shellfish":{"value":false},"vegetarian":{"value":true},"pork":{"value":false},"vegan":{"value":false},"nuts":{"value":false},"dairy":{"value":true},"gluten":{"value":true},"soy":{"value":false},"egg":{"value":false}},"images":[]},{"name":"Kale
+        Salad","description":"With green apple, red onion, tomatoes, and a lemon-olive
+        oil dressing.","instructions":"Label: Sophie","labels":{"shellfish":{"value":false},"vegetarian":{"value":true},"pork":{"value":false},"vegan":{"value":true},"nuts":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"egg":{"value":false}},"images":[{"image_url":"http://res.cloudinary.com/zerocater/image/upload/v1439527238/b1bqqxtesoqtpdu2lgxn.jpg","is_default":true}]}],"ratings":[]}'
+    http_version: 
+  recorded_at: Tue, 05 Apr 2016 15:00:02 GMT
+- request:
+    method: get
+    uri: https://api.zerocater.com/v3/meals/556120
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Lita v4.7.0
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      connection:
+      - close
+      server:
+      - gunicorn/19.3.0
+      date:
+      - Sun, 10 Apr 2016 18:17:52 GMT
+      transfer-encoding:
+      - chunked
+      strict-transport-security:
+      - max-age=31536000
+      x-frame-options:
+      - SAMEORIGIN
+      x-content-type-options:
+      - nosniff
+      allow:
+      - GET, HEAD, OPTIONS
+      x-xss-protection:
+      - 1; mode=block
+      content-type:
+      - application/json
+      via:
+      - 1.1 vegur
+    body:
+      encoding: UTF-8
+      string: '{"id":556120,"url":"https://api.zerocater.com/v3/meals/556120","name":"Seasonal
+        Salad Bar: Springtime","vendor_name":"Seasonal Salad Bar By 2Forks","vendor_image_url":"https://res.cloudinary.com/zerocater/image/upload/v1456775116/ku64f9okechlqxwdwfev.jpg","vendor_description":"Fresh
+        and seasonal salad bar provided by 2Forks.","time":1459968600,"location_hash":"ea9b7d","is_mindful":false,"was_delivered":true,"is_sample":false,"ratings_url":"https://api.zerocater.com/v3/meals/556120/ratings","items":[{"name":"Springtime
+        Salad Bar","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":true},"pork":{"value":false},"vegan":{"value":true},"nuts":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"egg":{"value":false}},"images":[]},{"name":"Grilled
+        Chicken Breast","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":false},"pork":{"value":false},"vegan":{"value":false},"nuts":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"egg":{"value":false}},"images":[]},{"name":"Grilled
+        Tofu","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":true},"pork":{"value":false},"vegan":{"value":true},"nuts":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":true},"egg":{"value":false}},"images":[]},{"name":"Avocado","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":true},"pork":{"value":false},"vegan":{"value":true},"nuts":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"egg":{"value":false}},"images":[]},{"name":"Citrus
+        Vinaigrette","description":"House made by 2Forks","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":true},"pork":{"value":false},"vegan":{"value":true},"nuts":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"egg":{"value":false}},"images":[]},{"name":"Balsamic
+        Vinaigrette","description":"House made by 2Forks","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":true},"pork":{"value":false},"vegan":{"value":true},"nuts":{"value":false},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"egg":{"value":false}},"images":[]},{"name":"Romano
+        Cheese","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":true},"pork":{"value":false},"vegan":{"value":false},"nuts":{"value":false},"dairy":{"value":true},"gluten":{"value":false},"soy":{"value":false},"egg":{"value":false}},"images":[]},{"name":"Almond
+        Slivers","description":"","instructions":"","labels":{"shellfish":{"value":false},"vegetarian":{"value":true},"pork":{"value":false},"vegan":{"value":true},"nuts":{"value":true},"dairy":{"value":false},"gluten":{"value":false},"soy":{"value":false},"egg":{"value":false}},"images":[]}],"ratings":[]}'
+    http_version: 
+  recorded_at: Tue, 05 Apr 2016 15:00:03 GMT
 recorded_with: VCR 3.0.1

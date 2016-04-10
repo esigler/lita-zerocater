@@ -59,40 +59,56 @@ module Lita
 
       private
 
-      def fetch(location)
-        http.get("https://api.zerocater.com/v3/companies/#{location}/meals")
+      def fetch_meals(location)
+        JSON.parse(
+          http.get("https://api.zerocater.com/v3/companies/#{location}/meals")
+          .body
+        )
       end
 
-      def extract(menu_text, search_date)
+      def fetch_meal(id)
+        JSON.parse(http.get("https://api.zerocater.com/v3/meals/#{id}").body)
+      end
+
+      def find_meals(meals, search_date)
         results = []
-        content = JSON.parse(menu_text.body)
-        content.each do |item|
+        meals.each do |item|
           date = DateTime.strptime(item['time'].to_s, '%s').strftime('%Y-%m-%d')
-          results << item['name'] if date == search_date
+          results << item['id'] if date == search_date
         end
         results
       end
 
-      # rubocop:disable Metrics/AbcSize
-      # rubocop:disable Metrics/MethodLength
-      def menu(location, search_date)
-        cache_key = "#{location}_#{search_date}"
-        return redis.get(cache_key) if redis.exists(cache_key)
+      def find_menu(location, search_date)
+        results = find_meals(fetch_meals(location), search_date)
+        meals = []
 
-        menu = extract(fetch(config.locations[location]), search_date)
+        results.each do |result|
+          m = fetch_meal(result)
+          meals << m['name']
+        end
+
+        meals
+      end
+
+      def render_menu(location, search_date)
+        menu = find_menu(config.locations[location], search_date)
         return t('error.empty') if menu.empty?
 
-        t = render_template('menu',
-                            menu: menu,
-                            locale: t('menu.locale', location: location))
-
-        redis.set(cache_key, t)
-        t
+        render_template('menu',
+                        menu: menu,
+                        locale: t('menu.locale', location: location))
       rescue
         t('error.retrieve')
       end
-      # rubocop:enable Metrics/AbcSize
-      # rubocop:enable Metrics/MethodLength
+
+      def menu(location, search_date)
+        cache_key = "#{location}_#{search_date}"
+        return redis.get(cache_key) if redis.exists(cache_key)
+        menu = render_menu(location, search_date)
+        redis.set(cache_key, menu)
+        menu
+      end
 
       def menu_today(location)
         menu(location, Date.today.to_s)

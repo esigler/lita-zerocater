@@ -1,13 +1,15 @@
 require 'simplecov'
 require 'coveralls'
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+SimpleCov.formatters = [
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
 SimpleCov.start { add_filter '/spec/' }
 
 require 'timecop'
+require 'vcr'
+
 require 'lita-zerocater'
 require 'lita/rspec'
 
@@ -30,8 +32,7 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 end
 
-def grab_request(method, status, body)
-  response = double('Faraday::Response', status: status, body: body)
-  allow_any_instance_of(Faraday::Connection).to receive(method.to_sym)
-    .and_return(response)
+VCR.configure do |config|
+  config.cassette_library_dir = 'spec/fixtures/vcr_cassettes'
+  config.hook_into :faraday
 end

@@ -5,14 +5,14 @@ describe Lita::Handlers::Zerocater, lita_handler: true do
     registry.config.handlers.zerocater.locations = { 'foo' => 'YVKV' }
   end
 
-  it { is_expected.to route_command('zerocater today').to(:today) }
-  it { is_expected.to route_command('zerocater tomorrow').to(:tomorrow) }
-  it { is_expected.to route_command('zerocater yesterday').to(:yesterday) }
-  it { is_expected.to route_command('breakfast').to(:today) }
-  it { is_expected.to route_command('brunch').to(:today) }
-  it { is_expected.to route_command('lunch').to(:today) }
-  it { is_expected.to route_command('Lunch').to(:today) }
-  it { is_expected.to route_command('dinner').to(:today) }
+  it { is_expected.to route_command('zerocater today').to(:menu) }
+  it { is_expected.to route_command('zerocater tomorrow').to(:menu) }
+  it { is_expected.to route_command('zerocater yesterday').to(:menu) }
+  it { is_expected.to route_command('breakfast').to(:alias) }
+  it { is_expected.to route_command('brunch').to(:alias) }
+  it { is_expected.to route_command('lunch').to(:alias) }
+  it { is_expected.to route_command('Lunch').to(:alias) }
+  it { is_expected.to route_command('dinner').to(:alias) }
 
   describe '#today' do
     it 'shows the menu for today' do

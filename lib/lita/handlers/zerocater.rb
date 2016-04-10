@@ -4,60 +4,51 @@ module Lita
       config :locations, type: Hash, required: true
 
       route(
-        /^zerocater\stoday$/,
-        :today,
+        /^zerocater\s(?<date>today|tomorrow|yesterday)$/,
+        :menu,
         command: true,
         help: {
-          t('help.today.syntax') => t('help.today.desc')
-        }
-      )
-
-      route(
-        /^zerocater\stomorrow$/,
-        :tomorrow,
-        command: true,
-        help: {
-          t('help.tomorrow.syntax') => t('help.tomorrow.desc')
-        }
-      )
-
-      route(
-        /^zerocater\syesterday$/,
-        :yesterday,
-        command: true,
-        help: {
-          t('help.yesterday.syntax') => t('help.yesterday.desc')
+          t('help.menu.syntax') => t('help.menu.desc')
         }
       )
 
       route(
         /^(breakfast|brunch|lunch|dinner)$/i,
-        :today,
+        :alias,
         command: true,
         help: {
-          t('help.lunch.syntax') => t('help.lunch.desc')
+          t('help.alias.syntax') => t('help.alias.desc')
         }
       )
 
-      def today(response)
+      # rubocop:disable Metrics/MethodLength
+      def menu(response)
+        search_date = case response.match_data['date']
+                      when 'tomorrow'
+                        Date.today + 1
+                      when 'yesterday'
+                        Date.today - 1
+                      else
+                        Date.today
+                      end
+
         config.locations.keys.each do |location|
-          response.reply(menu_today(location))
+          response.reply(fetch_menu(location, search_date))
         end
       end
+      # rubocop:enable Metrics/MethodLength
 
-      def tomorrow(response)
+      def alias(response)
         config.locations.keys.each do |location|
-          response.reply(menu_tomorrow(location))
-        end
-      end
-
-      def yesterday(response)
-        config.locations.keys.each do |location|
-          response.reply(menu_yesterday(location))
+          response.reply(fetch_menu(location, Date.today.to_s))
         end
       end
 
       private
+
+      def fetch_meal(id)
+        JSON.parse(http.get("https://api.zerocater.com/v3/meals/#{id}").body)
+      end
 
       def fetch_meals(location)
         JSON.parse(
@@ -66,16 +57,23 @@ module Lita
         )
       end
 
-      def fetch_meal(id)
-        JSON.parse(http.get("https://api.zerocater.com/v3/meals/#{id}").body)
+      def fetch_menu(location, search_date)
+        cache_key = "#{location}_#{search_date}"
+        return redis.get(cache_key) if redis.exists(cache_key)
+
+        menu = render_menu(location, search_date)
+        redis.set(cache_key, menu)
+
+        menu
       end
 
       def find_meals(meals, search_date)
         results = []
+
         meals.each do |item|
-          date = DateTime.strptime(item['time'].to_s, '%s').strftime('%Y-%m-%d')
-          results << item['id'] if date == search_date
+          results << item['id'] if Time.at(item['time']).to_date == search_date
         end
+
         results
       end
 
@@ -100,26 +98,6 @@ module Lita
                         locale: t('menu.locale', location: location))
       rescue
         t('error.retrieve')
-      end
-
-      def menu(location, search_date)
-        cache_key = "#{location}_#{search_date}"
-        return redis.get(cache_key) if redis.exists(cache_key)
-        menu = render_menu(location, search_date)
-        redis.set(cache_key, menu)
-        menu
-      end
-
-      def menu_today(location)
-        menu(location, Date.today.to_s)
-      end
-
-      def menu_yesterday(location)
-        menu(location, (Date.today - 1).to_s)
-      end
-
-      def menu_tomorrow(location)
-        menu(location, (Date.today + 1).to_s)
       end
     end
 

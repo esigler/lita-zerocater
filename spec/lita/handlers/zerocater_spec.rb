@@ -14,7 +14,7 @@ describe Lita::Handlers::Zerocater, lita_handler: true do
   it { is_expected.to route_command('Lunch').to(:alias) }
   it { is_expected.to route_command('dinner').to(:alias) }
 
-  describe '#today' do
+  describe '#menu' do
     it 'shows the menu for today' do
       Timecop.travel(Time.local(2016, 4, 5, 8, 0, 0))
       VCR.use_cassette('zerocater') do
@@ -22,8 +22,8 @@ describe Lita::Handlers::Zerocater, lita_handler: true do
         expect(replies.last).to eq(<<-MENU
 Menu for foo:
 
-Korean-Thai Fusion
-Seasonal Salad Bar: Springtime
+Korean-Thai Fusion (Crazy Mint)
+Seasonal Salad Bar: Springtime (Seasonal Salad Bar By 2Forks)
 MENU
                                   )
       end
@@ -44,33 +44,45 @@ MENU
     end
   end
 
-  describe '#tomorrow' do
-    it 'shows the menu for tomorrow' do
-      Timecop.travel(Time.local(2016, 4, 5, 8, 0, 0))
-      VCR.use_cassette('zerocater') do
-        send_command('zerocater tomorrow')
-        expect(replies.last).to eq(<<-MENU
+  it 'shows the menu for tomorrow' do
+    Timecop.travel(Time.local(2016, 4, 5, 8, 0, 0))
+    VCR.use_cassette('zerocater') do
+      send_command('zerocater tomorrow')
+      expect(replies.last).to eq(<<-MENU
 Menu for foo:
 
-French Breakfast Crepes!
-Sandwiches!
-Seasonal Salad Bar: Springtime
+French Breakfast Crepes! (Crepe Madame)
+Sandwiches! (Green Bar)
+Seasonal Salad Bar: Springtime (Seasonal Salad Bar By 2Forks)
 MENU
-                                  )
-      end
+                                )
     end
   end
 
-  describe '#yesterday' do
-    it 'shows the menu for yesterday' do
+  it 'shows the menu for yesterday' do
+    Timecop.travel(Time.local(2016, 4, 5, 8, 0, 0))
+    VCR.use_cassette('zerocater') do
+      send_command('zerocater yesterday')
+      expect(replies.last).to eq(<<-MENU
+Menu for foo:
+
+Seasonal Salad Bar: Springtime (Seasonal Salad Bar By 2Forks)
+Chicken & Meatballs (Cafe Sud)
+MENU
+                                )
+    end
+  end
+
+  describe '#alias' do
+    it 'shows the menu for today' do
       Timecop.travel(Time.local(2016, 4, 5, 8, 0, 0))
       VCR.use_cassette('zerocater') do
-        send_command('zerocater yesterday')
+        send_command('lunch')
         expect(replies.last).to eq(<<-MENU
 Menu for foo:
 
-Seasonal Salad Bar: Springtime
-Chicken & Meatballs
+Korean-Thai Fusion (Crazy Mint)
+Seasonal Salad Bar: Springtime (Seasonal Salad Bar By 2Forks)
 MENU
                                   )
       end

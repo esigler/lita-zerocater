@@ -40,7 +40,7 @@ module Lita
 
       def alias(response)
         config.locations.keys.each do |location|
-          response.reply(fetch_menu(location, Date.today.to_s))
+          response.reply(fetch_menu(location, Date.today))
         end
       end
 
@@ -83,7 +83,7 @@ module Lita
 
         results.each do |result|
           m = fetch_meal(result)
-          meals << m['name']
+          meals << m
         end
 
         meals

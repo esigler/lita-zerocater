@@ -1,6 +1,5 @@
 <%= @locale %>:
 
-<% @menu.each do |item| %>
-<%= item %>
-
+<% @menu.each do |meal| %>
+<%= meal['name'] %> (<%= meal['vendor_name'] %>)
 <% end %>

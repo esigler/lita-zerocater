@@ -3,18 +3,12 @@ en:
     handlers:
       zerocater:
         help:
-          lunch:
+          alias:
             syntax: (breakfast|brunch|lunch|dinner)
             desc: Show today's Zerocater menu for all locations
-          today:
-            syntax: zerocater today
-            desc: Show today's Zerocater menu for all locations
-          tomorrow:
-            syntax: zerocater tomorrow
-            desc: Show tomorrow's Zerocater menu for all locations
-          yesterday:
-            syntax: zerocater yesterday
-            desc: Show yesterday's Zerocater menu for all locations
+          menu:
+            syntax: zerocater (today|tomorrow|yesterday)
+            desc: Show appropriate Zerocater menu for all locations
         error:
           empty: There are no menu items found for today
           retrieve: There was an error retriving the menu

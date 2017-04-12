@@ -37,10 +37,10 @@ MENU
       end
     end
 
-    it 'shows a warning if there was a problem retriving the page' do
+    it 'shows a warning if there was a problem retrieving the page' do
       allow_any_instance_of(Faraday::Connection).to receive('get').and_raise
       send_command('zerocater today')
-      expect(replies.last).to eq('There was an error retriving the menu')
+      expect(replies.last).to eq('There was an error retrieving the menu')
     end
   end
 

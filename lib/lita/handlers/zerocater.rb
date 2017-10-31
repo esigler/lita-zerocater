@@ -88,16 +88,40 @@ module Lita
 
         meals
       end
+      
+      # append emoji icons based on item labels
+      def append_icons(item)
+          name = item['name']
+          icons = {
+            "nuts" => "🥜",
+            "vegan" => "🌱",
+            "dairy" => "🧀",
+            "egg" => "🥚",
+            "vegetarian" => "🥕",
+            "gluten" => "🍞",
+            "shellfish" => "🦐",
+            "red meat" => "🍖",
+            "pork" => "🥓"
+          }
+          labels = item['labels'].select { |label, value| value['value'] == true && icons.key?(label) }
+              .map { |label, v| icons[label] }
+          # if it's vegan, it's necessarily vegetarian. Remove redundant icon.
+          if labels.include?(icons['vegetarian']) && labels.include?(icons['vegan'])
+              labels.delete_at(labels.index(icons['vegetarian']))
+          end
+          name = labels.empty? ? name : name << " | " << labels.join(" ")
+          name
+      end
 
       def render_menu(location, search_date)
         menu = find_menu(config.locations[location], search_date)
         return t('error.empty') if menu.empty?
-
+     
+        items = menu[0]['items'].map{ |item| append_icons(item) }
         render_template('menu',
-                        menu: menu,
-                        locale: t('menu.locale', location: location))
-      rescue
-        t('error.retrieve')
+                      menu: menu,
+                      items: items,
+                      locale: t('menu.locale', location: location))
       end
     end
 

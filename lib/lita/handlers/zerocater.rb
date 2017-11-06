@@ -31,7 +31,6 @@ module Lita
                       else
                         Date.today
                       end
-
         config.locations.keys.each do |location|
           response.reply(fetch_menu(location, search_date))
         end
@@ -58,11 +57,11 @@ module Lita
       end
 
       def fetch_menu(location, search_date)
-        cache_key = "#{location}_#{search_date}"
-        return redis.get(cache_key) if redis.exists(cache_key)
+        # cache_key = "#{location}_#{search_date}"
+        # return redis.get(cache_key) if redis.exists(cache_key)
 
         menu = render_menu(location, search_date)
-        redis.set(cache_key, menu)
+        # redis.set(cache_key, menu)
 
         menu
       end
@@ -117,7 +116,7 @@ module Lita
         menu = find_menu(config.locations[location], search_date)
         return t('error.empty') if menu.empty?
      
-        items = menu[0]['items'].map{ |item| append_icons(item) }
+        items = menu.map { |m| m['items'].map{ |item| append_icons(item) } }
         render_template('menu',
                       menu: menu,
                       items: items,

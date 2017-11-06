@@ -1,7 +1,8 @@
 <%= @locale %>:
 
-<% @menu.each do |meal| %>
-    *<%= meal['name'] %>* (<%= meal['vendor_name'] %>)
-    <% @items.each do |item| %>     <%= item %>
-    <% end %>
+<% @menu.to_enum.with_index(0).each do |meal, idx| %>
+*<%= meal['name'] %>* (<%= meal['vendor_name'] %>)
+<% @items[idx].each do |item| %>
+-    <%= item %>
+<% end %>
 <% end %>

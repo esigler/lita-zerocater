@@ -33,6 +33,7 @@ module Lita
                       else
                         Date.today
                       end
+
         config.locations.keys.each do |location|
           response.reply(fetch_menu(location, search_date))
         end

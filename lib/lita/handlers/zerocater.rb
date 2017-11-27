@@ -36,14 +36,14 @@ module Lita
                         Date.today
                       end
 
-        config.locations.keys.each do |location|
+        config.locations.each_key do |location|
           response.reply(fetch_menu(location, search_date))
         end
       end
       # rubocop:enable Metrics/MethodLength
 
       def alias(response)
-        config.locations.keys.each do |location|
+        config.locations.each_key do |location|
           response.reply(fetch_menu(location, Date.today))
         end
       end
@@ -120,7 +120,7 @@ module Lita
                         menu: menu,
                         items: items,
                         locale: t('menu.locale', location: location))
-      rescue
+      rescue StandardError
         t('error.retrieve')
       end
     end

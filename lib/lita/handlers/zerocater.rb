@@ -1,3 +1,5 @@
+require_relative 'icons'
+
 module Lita
   module Handlers
     class Zerocater < Handler
@@ -89,12 +91,32 @@ module Lita
         meals
       end
 
+      # append emoji icons based on item labels
+      def append_icons(item)
+        labels = get_label_icons(item)
+        # if it's vegan, it's necessarily vegetarian. Remove redundant icon.
+        if labels.include?(ICONS['vegetarian']) &&
+           labels.include?(ICONS['vegan'])
+          labels.delete_at(labels.index(ICONS['vegetarian']))
+        end
+        labels.empty? ? item['name'] : item['name'] << ' | ' << labels.join(' ')
+      end
+
+      def get_label_icons(item)
+        labels = item['labels'].select do |label, value|
+          value['value'] == true && ICONS.key?(label)
+        end
+        labels.map { |label, _| ICONS[label] }
+      end
+
       def render_menu(location, search_date)
         menu = find_menu(config.locations[location], search_date)
         return t('error.empty') if menu.empty?
 
+        items = menu.map { |m| m['items'].map { |item| append_icons(item) } }
         render_template('menu',
                         menu: menu,
+                        items: items,
                         locale: t('menu.locale', location: location))
       rescue
         t('error.retrieve')

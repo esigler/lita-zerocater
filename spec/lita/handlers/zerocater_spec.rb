@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe Lita::Handlers::Zerocater, lita_handler: true do
@@ -19,27 +21,27 @@ describe Lita::Handlers::Zerocater, lita_handler: true do
       Timecop.travel(Time.local(2016, 4, 5, 8, 0, 0))
       VCR.use_cassette('zerocater') do
         send_command('zerocater today')
-        expect(replies.last).to eq(<<-MENU
-Menu for foo:
+        expect(replies.last).to eq(<<~MENU
+          Menu for foo:
 
-*Korean-Thai Fusion* (Crazy Mint)
--    Sweet Garlic Ginger Grilled Chicken | 🍞
--    Spicy Korean BBQ Chicken | 🍞
--    Tofu Green Curry | 🌱
--    Coconut Rice | 🌱
--    Soba Noodle Salad | 🍞 🌱
--    Sake and Miso Glazed Japanese Eggplants | 🌱
--    Vegetable and Bean Cake | 🌱
-*Seasonal Salad Bar: Springtime* (Seasonal Salad Bar By 2Forks)
--    Springtime Salad Bar | 🌱
--    Grilled Chicken Breast
--    Grilled Tofu | 🌱
--    Avocado | 🌱
--    Citrus Vinaigrette | 🌱
--    Balsamic Vinaigrette | 🌱
--    Citrus Avocado Dressing
--    Almond Slivers | 🌱 🥜
--    Romano Cheese | 🧀 🥕
+          *Korean-Thai Fusion* (Crazy Mint)
+          -    Sweet Garlic Ginger Grilled Chicken | 🍞
+          -    Spicy Korean BBQ Chicken | 🍞
+          -    Tofu Green Curry | 🌱
+          -    Coconut Rice | 🌱
+          -    Soba Noodle Salad | 🍞 🌱
+          -    Sake and Miso Glazed Japanese Eggplants | 🌱
+          -    Vegetable and Bean Cake | 🌱
+          *Seasonal Salad Bar: Springtime* (Seasonal Salad Bar By 2Forks)
+          -    Springtime Salad Bar | 🌱
+          -    Grilled Chicken Breast
+          -    Grilled Tofu | 🌱
+          -    Avocado | 🌱
+          -    Citrus Vinaigrette | 🌱
+          -    Balsamic Vinaigrette | 🌱
+          -    Citrus Avocado Dressing
+          -    Almond Slivers | 🌱 🥜
+          -    Romano Cheese | 🧀 🥕
 MENU
                                   )
       end
@@ -64,36 +66,36 @@ MENU
     Timecop.travel(Time.local(2016, 4, 5, 8, 0, 0))
     VCR.use_cassette('zerocater') do
       send_command('zerocater tomorrow')
-      expect(replies.last).to eq(<<-MENU
-Menu for foo:
+      expect(replies.last).to eq(<<~MENU
+        Menu for foo:
 
-*French Breakfast Crepes!* (Crepe Madame)
--    Savory Buckwheat Crepes | 🧀 🥕 🥚
--    Sweet Crepes | 🧀 🍞 🥕 🥚 🥜
--    Organic Egg | 🥕 🥚
-*Sandwiches!* (Green Bar)
--    BBQ Chicken with Smoked Gouda Sandwich | 🧀 🍞
--    Gluten-Free BBQ Chicken with Smoked Gouda Sandwich | 🧀
--    Beef Tri-Tip Sandwich | 🧀 🍞 🥚
--    Ham and Brie Sandwich | 🥓 🧀 🍞
--    Roast Turkey Sandwich with Cranberry Sauce | 🍞 🥚
--    Gluten-Free Roast Turkey Sandwich with Cranberry Sauce | 🥚
--    Gluten-Free Grilled Chicken Sandwich | 🥚
--    Grilled Chicken Sandwich | 🍞 🥚
--    Hummus, Cucumber, Avocado, and Tomato on Focaccia | 🌱 🍞
--    Grilled Portobello Mushroom with Provolone Sandwich | 🥕 🧀 🍞
--    Creamy Brie with Sun Dried Tomato Pesto, Sprouts, and Sliced Apple | 🥕 🥜 🧀 🍞
--    Grilled Portobello Mushroom with Provolone Sandwich | 🥕 🧀 🍞
--    Kale Salad | 🌱
-*Seasonal Salad Bar: Springtime* (Seasonal Salad Bar By 2Forks)
--    Springtime Salad Bar | 🌱
--    Grilled Chicken Breast
--    Grilled Tofu | 🌱
--    Avocado | 🌱
--    Citrus Vinaigrette | 🌱
--    Balsamic Vinaigrette | 🌱
--    Romano Cheese | 🥕 🧀
--    Almond Slivers | 🌱 🥜
+        *French Breakfast Crepes!* (Crepe Madame)
+        -    Savory Buckwheat Crepes | 🧀 🥕 🥚
+        -    Sweet Crepes | 🧀 🍞 🥕 🥚 🥜
+        -    Organic Egg | 🥕 🥚
+        *Sandwiches!* (Green Bar)
+        -    BBQ Chicken with Smoked Gouda Sandwich | 🧀 🍞
+        -    Gluten-Free BBQ Chicken with Smoked Gouda Sandwich | 🧀
+        -    Beef Tri-Tip Sandwich | 🧀 🍞 🥚
+        -    Ham and Brie Sandwich | 🥓 🧀 🍞
+        -    Roast Turkey Sandwich with Cranberry Sauce | 🍞 🥚
+        -    Gluten-Free Roast Turkey Sandwich with Cranberry Sauce | 🥚
+        -    Gluten-Free Grilled Chicken Sandwich | 🥚
+        -    Grilled Chicken Sandwich | 🍞 🥚
+        -    Hummus, Cucumber, Avocado, and Tomato on Focaccia | 🌱 🍞
+        -    Grilled Portobello Mushroom with Provolone Sandwich | 🥕 🧀 🍞
+        -    Creamy Brie with Sun Dried Tomato Pesto, Sprouts, and Sliced Apple | 🥕 🥜 🧀 🍞
+        -    Grilled Portobello Mushroom with Provolone Sandwich | 🥕 🧀 🍞
+        -    Kale Salad | 🌱
+        *Seasonal Salad Bar: Springtime* (Seasonal Salad Bar By 2Forks)
+        -    Springtime Salad Bar | 🌱
+        -    Grilled Chicken Breast
+        -    Grilled Tofu | 🌱
+        -    Avocado | 🌱
+        -    Citrus Vinaigrette | 🌱
+        -    Balsamic Vinaigrette | 🌱
+        -    Romano Cheese | 🥕 🧀
+        -    Almond Slivers | 🌱 🥜
 MENU
                                 )
     end
@@ -103,28 +105,28 @@ MENU
     Timecop.travel(Time.local(2016, 4, 5, 8, 0, 0))
     VCR.use_cassette('zerocater') do
       send_command('zerocater yesterday')
-      expect(replies.last).to eq(<<-MENU
-Menu for foo:
+      expect(replies.last).to eq(<<~MENU
+        Menu for foo:
 
-*Seasonal Salad Bar: Springtime* (Seasonal Salad Bar By 2Forks)
--    Springtime Salad Bar | 🌱
--    Grilled Chicken Breast
--    Grilled Tofu | 🌱
--    Avocado | 🌱
--    Citrus Vinaigrette | 🌱
--    Balsamic Vinaigrette | 🌱
--    Romano Cheese | 🥕 🧀
--    Almond Slivers | 🌱 🥜
--    Citrus Avocado Dressing
--    Dried Cherries | 🌱
-*Chicken & Meatballs* (Cafe Sud)
--    Turkey Meatballs with Fresh Tomato Sauce | 🍞 🥚
--    Sundried Tomato Grilled Chicken
--    Pesto Aioli | 🥕 🥚
--    French Organic Lentils | 🌱
--    Garlic and Rosemary Roasted Potatoes | 🌱
--    Grilled Vegetables | 🌱
--    French Organic Lentils | 🌱
+        *Seasonal Salad Bar: Springtime* (Seasonal Salad Bar By 2Forks)
+        -    Springtime Salad Bar | 🌱
+        -    Grilled Chicken Breast
+        -    Grilled Tofu | 🌱
+        -    Avocado | 🌱
+        -    Citrus Vinaigrette | 🌱
+        -    Balsamic Vinaigrette | 🌱
+        -    Romano Cheese | 🥕 🧀
+        -    Almond Slivers | 🌱 🥜
+        -    Citrus Avocado Dressing
+        -    Dried Cherries | 🌱
+        *Chicken & Meatballs* (Cafe Sud)
+        -    Turkey Meatballs with Fresh Tomato Sauce | 🍞 🥚
+        -    Sundried Tomato Grilled Chicken
+        -    Pesto Aioli | 🥕 🥚
+        -    French Organic Lentils | 🌱
+        -    Garlic and Rosemary Roasted Potatoes | 🌱
+        -    Grilled Vegetables | 🌱
+        -    French Organic Lentils | 🌱
 MENU
                                 )
     end
@@ -135,27 +137,27 @@ MENU
       Timecop.travel(Time.local(2016, 4, 5, 8, 0, 0))
       VCR.use_cassette('zerocater') do
         send_command('lunch')
-        expect(replies.last).to eq(<<-MENU
-Menu for foo:
+        expect(replies.last).to eq(<<~MENU
+          Menu for foo:
 
-*Korean-Thai Fusion* (Crazy Mint)
--    Sweet Garlic Ginger Grilled Chicken | 🍞
--    Spicy Korean BBQ Chicken | 🍞
--    Tofu Green Curry | 🌱
--    Coconut Rice | 🌱
--    Soba Noodle Salad | 🍞 🌱
--    Sake and Miso Glazed Japanese Eggplants | 🌱
--    Vegetable and Bean Cake | 🌱
-*Seasonal Salad Bar: Springtime* (Seasonal Salad Bar By 2Forks)
--    Springtime Salad Bar | 🌱
--    Grilled Chicken Breast
--    Grilled Tofu | 🌱
--    Avocado | 🌱
--    Citrus Vinaigrette | 🌱
--    Balsamic Vinaigrette | 🌱
--    Citrus Avocado Dressing
--    Almond Slivers | 🌱 🥜
--    Romano Cheese | 🧀 🥕
+          *Korean-Thai Fusion* (Crazy Mint)
+          -    Sweet Garlic Ginger Grilled Chicken | 🍞
+          -    Spicy Korean BBQ Chicken | 🍞
+          -    Tofu Green Curry | 🌱
+          -    Coconut Rice | 🌱
+          -    Soba Noodle Salad | 🍞 🌱
+          -    Sake and Miso Glazed Japanese Eggplants | 🌱
+          -    Vegetable and Bean Cake | 🌱
+          *Seasonal Salad Bar: Springtime* (Seasonal Salad Bar By 2Forks)
+          -    Springtime Salad Bar | 🌱
+          -    Grilled Chicken Breast
+          -    Grilled Tofu | 🌱
+          -    Avocado | 🌱
+          -    Citrus Vinaigrette | 🌱
+          -    Balsamic Vinaigrette | 🌱
+          -    Citrus Avocado Dressing
+          -    Almond Slivers | 🌱 🥜
+          -    Romano Cheese | 🧀 🥕
 MENU
                                   )
       end

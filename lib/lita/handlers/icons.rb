@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 ICONS = {
   'nuts' => '🥜',
   'vegan' => '🌱',

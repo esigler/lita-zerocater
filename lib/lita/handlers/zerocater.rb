@@ -66,7 +66,7 @@ module Lita
         return redis.get(cache_key) if redis.exists(cache_key)
 
         menu = render_menu(location, search_date)
-        redis.set(cache_key, menu)
+        redis.set(cache_key, menu, ex: 300)
 
         menu
       end

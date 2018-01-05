@@ -124,7 +124,7 @@ MENU
       send_command('zerocater today')
       expect(replies.last).to eq('There was an error retrieving the menu')
     end
-    # rubocop:enabler RSpec/AnyInstance
+    # rubocop:enable RSpec/AnyInstance
   end
 
   it 'shows the menu for tomorrow' do

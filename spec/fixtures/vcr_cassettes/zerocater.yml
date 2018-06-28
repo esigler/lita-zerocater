@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.zerocater.com/v3/meals/567315
+    uri: https://app.zerocater.com/api/v3/meals/567315
     body:
       encoding: US-ASCII
       string: ''
@@ -60,7 +60,7 @@ http_interactions:
   recorded_at: Tue, 05 Apr 2016 15:00:01 GMT
 - request:
     method: get
-    uri: https://api.zerocater.com/v3/meals/556119
+    uri: https://app.zerocater.com/api/v3/meals/556119
     body:
       encoding: US-ASCII
       string: ''
@@ -111,7 +111,7 @@ http_interactions:
   recorded_at: Tue, 05 Apr 2016 15:00:02 GMT
 - request:
     method: get
-    uri: https://api.zerocater.com/v3/meals/556118
+    uri: https://app.zerocater.com/api/v3/meals/556118
     body:
       encoding: US-ASCII
       string: ''
@@ -163,7 +163,7 @@ http_interactions:
   recorded_at: Tue, 05 Apr 2016 15:00:01 GMT
 - request:
     method: get
-    uri: https://api.zerocater.com/v3/meals/567314
+    uri: https://app.zerocater.com/api/v3/meals/567314
     body:
       encoding: US-ASCII
       string: ''
@@ -220,7 +220,7 @@ http_interactions:
   recorded_at: Tue, 05 Apr 2016 15:00:01 GMT
 - request:
     method: get
-    uri: https://api.zerocater.com/v3/companies/YVKV/meals
+    uri: https://app.zerocater.com/api/v3/companies/YVKV/meals
     body:
       encoding: US-ASCII
       string: ''
@@ -249,9 +249,9 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       link:
-      - <https://api.zerocater.com/v3/companies/YVKV/meals?count=40&current=1461264600>;
-        rel="current", <https://api.zerocater.com/v3/companies/YVKV/meals?count=40&prev=1459277400>;
-        rel="prev", <https://api.zerocater.com/v3/companies/YVKV/meals?count=40&next=1461264600>;
+      - <https://app.zerocater.com/api/v3/companies/YVKV/meals?count=40&current=1461264600>;
+        rel="current", <https://app.zerocater.com/api/v3/companies/YVKV/meals?count=40&prev=1459277400>;
+        rel="prev", <https://app.zerocater.com/api/v3/companies/YVKV/meals?count=40&next=1461264600>;
         rel="next"
       allow:
       - GET, HEAD, OPTIONS
@@ -721,7 +721,7 @@ http_interactions:
   recorded_at: Tue, 05 Apr 2016 15:00:00 GMT
 - request:
     method: get
-    uri: https://api.zerocater.com/v3/meals/556108
+    uri: https://app.zerocater.com/api/v3/meals/556108
     body:
       encoding: US-ASCII
       string: ''
@@ -771,7 +771,7 @@ http_interactions:
   recorded_at: Tue, 05 Apr 2016 15:00:01 GMT
 - request:
     method: get
-    uri: https://api.zerocater.com/v3/meals/580764
+    uri: https://app.zerocater.com/api/v3/meals/580764
     body:
       encoding: US-ASCII
       string: ''
@@ -833,7 +833,7 @@ http_interactions:
   recorded_at: Tue, 05 Apr 2016 15:00:02 GMT
 - request:
     method: get
-    uri: https://api.zerocater.com/v3/meals/556120
+    uri: https://app.zerocater.com/api/v3/meals/556120
     body:
       encoding: US-ASCII
       string: ''

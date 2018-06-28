@@ -51,12 +51,12 @@ module Lita
       private
 
       def fetch_meal(id)
-        JSON.parse(http.get("https://api.zerocater.com/v3/meals/#{id}").body)
+        JSON.parse(http.get("https://app.zerocater.com/api/v3/meals/#{id}").body)
       end
 
       def fetch_meals(location)
         JSON.parse(
-          http.get("https://api.zerocater.com/v3/companies/#{location}/meals")
+          http.get("https://app.zerocater.com/api/v3/companies/#{location}/meals")
           .body
         )
       end
@@ -101,7 +101,7 @@ module Lita
            labels.include?(ICONS['vegan'])
           labels.delete_at(labels.index(ICONS['vegetarian']))
         end
-        labels.empty? ? item['name'] : item['name'] << ' | ' << labels.join(' ')
+        labels.empty? ? item["name"] : item["name"] << ' | ' << labels.join(' ')
       end
 
       def get_label_icons(item)

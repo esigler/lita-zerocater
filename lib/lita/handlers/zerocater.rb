@@ -1,3 +1,7 @@
+# frozen_string_literal: true
+
+require_relative 'icons'
+
 module Lita
   module Handlers
     class Zerocater < Handler
@@ -32,14 +36,14 @@ module Lita
                         Date.today
                       end
 
-        config.locations.keys.each do |location|
+        config.locations.each_key do |location|
           response.reply(fetch_menu(location, search_date))
         end
       end
       # rubocop:enable Metrics/MethodLength
 
       def alias(response)
-        config.locations.keys.each do |location|
+        config.locations.each_key do |location|
           response.reply(fetch_menu(location, Date.today))
         end
       end
@@ -47,12 +51,12 @@ module Lita
       private
 
       def fetch_meal(id)
-        JSON.parse(http.get("https://api.zerocater.com/v3/meals/#{id}").body)
+        JSON.parse(http.get("https://app.zerocater.com/api/v3/meals/#{id}").body)
       end
 
       def fetch_meals(location)
         JSON.parse(
-          http.get("https://api.zerocater.com/v3/companies/#{location}/meals")
+          http.get("https://app.zerocater.com/api/v3/companies/#{location}/meals")
           .body
         )
       end
@@ -62,7 +66,7 @@ module Lita
         return redis.get(cache_key) if redis.exists(cache_key)
 
         menu = render_menu(location, search_date)
-        redis.set(cache_key, menu)
+        redis.set(cache_key, menu, ex: 300)
 
         menu
       end
@@ -89,14 +93,34 @@ module Lita
         meals
       end
 
+      # append emoji icons based on item labels
+      def append_icons(item)
+        labels = get_label_icons(item)
+        # if it's vegan, it's necessarily vegetarian. Remove redundant icon.
+        if labels.include?(ICONS['vegetarian']) &&
+           labels.include?(ICONS['vegan'])
+          labels.delete_at(labels.index(ICONS['vegetarian']))
+        end
+        labels.empty? ? item["name"] : item["name"] << ' | ' << labels.join(' ')
+      end
+
+      def get_label_icons(item)
+        labels = item['labels'].select do |label, value|
+          value['value'] == true && ICONS.key?(label)
+        end
+        labels.map { |label, _| ICONS[label] }
+      end
+
       def render_menu(location, search_date)
         menu = find_menu(config.locations[location], search_date)
         return t('error.empty') if menu.empty?
 
+        items = menu.map { |m| m['items'].map { |item| append_icons(item) } }
         render_template('menu',
                         menu: menu,
+                        items: items,
                         locale: t('menu.locale', location: location))
-      rescue
+      rescue StandardError
         t('error.retrieve')
       end
     end

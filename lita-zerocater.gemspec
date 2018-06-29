@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 Gem::Specification.new do |spec|
   spec.name          = 'lita-zerocater'
-  spec.version       = '0.10.0'
+  spec.version       = '1.0.2'
   spec.authors       = ['Eric Sigler']
   spec.email         = ['me@esigler.com']
   spec.description   = 'A ZeroCater menu lookup plugin for Lita'
@@ -19,10 +21,11 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'coveralls'
   spec.add_development_dependency 'pry-byebug'
-  spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rack-test'
+  spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec'
   spec.add_development_dependency 'rubocop'
+  spec.add_development_dependency 'rubocop-rspec'
   spec.add_development_dependency 'simplecov'
   spec.add_development_dependency 'timecop'
   spec.add_development_dependency 'vcr'

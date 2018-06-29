@@ -11,6 +11,6 @@ en:
             desc: Show appropriate Zerocater menu for all locations
         error:
           empty: There are no menu items found for today
-          retrieve: There was an error retriving the menu
+          retrieve: There was an error retrieving the menu
         menu:
           locale: "Menu for %{location}"

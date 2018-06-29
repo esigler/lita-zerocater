@@ -1,3 +1,5 @@
+require: rubocop-rspec
+
 Documentation:
   Exclude:
     - lib/lita/handlers/zerocater.rb
@@ -5,3 +7,7 @@ Documentation:
 FileName:
   Exclude:
     - lib/lita-zerocater.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*

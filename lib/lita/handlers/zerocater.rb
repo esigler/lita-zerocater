@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative 'icons'
+require_relative 'overrides'
 
 module Lita
   module Handlers
@@ -35,9 +36,15 @@ module Lita
                       else
                         Date.today
                       end
-
-        config.locations.each_key do |location|
-          response.reply(fetch_menu(location, search_date))
+        # Is this an override date?
+        if OVERRIDE_LIST.include? search_date
+          config.locations.each_key do |location|
+            response.reply(override_menu(OVERRIDE_LIST[search_date]))
+          end
+        else
+          config.locations.each_key do |location|
+            response.reply(fetch_menu(location, search_date))
+          end
         end
       end
       # rubocop:enable Metrics/MethodLength
@@ -49,6 +56,10 @@ module Lita
       end
 
       private
+
+      def prank_menu()
+        
+      end
 
       def fetch_meal(id)
         JSON.parse(http.get("https://app.zerocater.com/api/v3/meals/#{id}").body)

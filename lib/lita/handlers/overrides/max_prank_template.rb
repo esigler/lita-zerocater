@@ -1,0 +1,35 @@
+MAX_PRANK_TEMPLATE = %q(
+  *Week of Max: Spooky Salad Week!*
+-    Bread | :bread: :seedling:
+-    Butter | :cheese_wedge: :carrot:
+-    Romaine Lettuce | :seedling:
+-    Mixed Greens | :seedling:
+-    Spinach | :seedling:
+-    Balsamic Vinaigrette | :seedling:
+-    Caesar Dressing | :cheese_wedge: :bread: :egg:
+-    Cucumbers | :seedling:
+-    Walnuts | :peanuts: :seedling:
+-    Croutons | :bread: :seedling:
+-    Kidney Beans | :seedling:
+-    Dried Cranberries | :seedling:
+-    Almonds | :peanuts: :seedling:
+-    Beets | :seedling:
+-    Corn | :seedling:
+-    Green Beans | :seedling:
+-    Mushrooms | :seedling:
+-    Hard Boiled Eggs | :carrot: :egg:
+-    Grilled Asparagus | :seedling:
+-    Brussels Sprouts | :seedling:
+-    Radish | :seedling:
+-    Pepperoncini | :seedling:
+-    Cherry Tomatoes | :seedling:
+-    Yellow Squash | :seedling:
+-    Black Olives | :seedling:
+-    Feta Cheese | :cheese_wedge: :carrot:
+-    Parmesan Cheese | :cheese_wedge: :carrot:
+-    Mozzarella Cheese | :cheese_wedge: :carrot:
+-    Avocado | :seedling:
+-    Sesame Marinated Tofu | :seedling:
+-    Vegan Meatballs | :bread: :seedling:
+-    Honey Mustard Dressing | :carrot: :egg:
+)
